@@ -8,7 +8,7 @@ set $right semicolon
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec i3-sensible-terminal
+bindsym Mod4+Return exec xterm 
 
 # kill focused window
 bindsym Mod4+q kill
@@ -129,6 +129,16 @@ bindsym Mod4+r mode "resize"
 bar {
 	position top
         status_command i3status
+	font pango:Roboto 12
+        colors {
+                background #002b36
+                statusline #eee8d5
+                separator #93a1a1
+                # colorclass       <border> <background> <text>
+                focused_workspace  #268bd2  #2aa198     #fdf6e3
+                inactive_workspace #586e75  #073642     #eee8d5
+
+        }
 }
 
 
@@ -140,27 +150,24 @@ bar {
 #client.placeholder      #000000 #000000 #ffffff #000000   #000000
 #client.background       #ffffff
 
-
-########################################################################
 ########################################################################
 ####
 ####                   Floated windows 
 ####
 ########################################################################
-########################################################################
+
 
 for_window [title="Calculator"] floating enable
 for_window [class="^.*"] border pixel 1
-for_window [class="vlc"] floating enable
+for_window [class="vlc"] floating enable border pixel 5
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
+for_window [class="teams"] floating enable
 
-########################################################################
 ########################################################################
 ####
 ####                   HOTKEYS 
 ####
-########################################################################
 ########################################################################
 
 # switch workspaces by mod+ctrl+left/right
@@ -176,13 +183,10 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
-
-########################################################################
 ########################################################################
 ####
 ####                   AUTOLOAD
 ####
-########################################################################
 ########################################################################
 
 exec xrandr --output eDP1 --mode 2560x1440 --scale 0.7x0.7
@@ -190,4 +194,3 @@ exec xrandr --auto --output HDMI1 --mode 3440x1440 --above eDP1
 
 exec nm-applet &
 exec blueberry-tray &
-
