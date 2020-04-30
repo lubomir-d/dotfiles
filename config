@@ -8,7 +8,7 @@ set $right semicolon
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec xterm 
+bindsym Mod4+Return exec xterm-256color
 
 # kill focused window
 bindsym Mod4+q kill
@@ -163,6 +163,16 @@ for_window [class="vlc"] floating enable border pixel 5
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="teams"] floating enable
+for_window [class="slack"] floating enable
+
+#######################################################################
+####
+####                  Keyboard
+####
+#######################################################################
+
+exec "setxkbmap -layout us,ru"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
 ########################################################################
 ####
