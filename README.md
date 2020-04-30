@@ -5,6 +5,7 @@ For enable tap to click in i3-wm:
   1. sudo mkdir -p /etc/X11/xorg.conf.d
   2. sudo nvim /etc/X11/xorg.conf.d/90-touchpad.conf
   3. past conf:
+    ```
     Section "InputClass"
           Identifier "touchpad"
           MatchIsTouchpad "on"
@@ -14,4 +15,5 @@ For enable tap to click in i3-wm:
           Option "NaturalScrolling" "on"
           Option "ScrollMethod" "twofinger"
     EndSection
+    ```
     
