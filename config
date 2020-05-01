@@ -8,7 +8,7 @@ set $right semicolon
 floating_modifier Mod4
 
 # start a terminal
-bindsym Mod4+Return exec xterm-256color
+bindsym Mod4+Return exec xterm
 
 # kill focused window
 bindsym Mod4+q kill
