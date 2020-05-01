@@ -28,5 +28,5 @@ For switch keyboard layout
         Option "XkbModel" "pc105"
   EndSection
   ```
- 
-    
+ For .Xresources after update:
+ ```$ xrdb -merge ~/.Xresources```
